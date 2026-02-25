@@ -33,21 +33,6 @@ struct AppCoordinatorView: View {
             }
         })
         .environmentObject(tabBarState)
-        .onAppear(perform: {
-            let x = 1
-            if x == 1 {
-                print("Hello")
-            }
-            
-            let items = [1, 2]
-            if items.count == 0 {
-                print("Empty")
-            }
-            
-            if [1,2].count == 0 {
-                print("bad")
-            }
-        })
     }
 }
 

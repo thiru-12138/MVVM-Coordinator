@@ -35,18 +35,6 @@ enum TabItem: Hashable, CaseIterable {
 @MainActor
 class AppCoordinator: ObservableObject {
     @Published var selectedTab: TabItem = .home
-    
-//    @Published var path = NavigationPath()
-//    
-//    // Helper to push pages
-//    func push(_ page: AppPage) {
-//        path.append(page)
-//    }
-//    
-//    // Helper to pop back
-//    func pop() {
-//        path.removeLast()
-//    }
 }
 
 @MainActor

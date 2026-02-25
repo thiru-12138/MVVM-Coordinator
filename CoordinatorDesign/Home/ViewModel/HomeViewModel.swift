@@ -19,16 +19,18 @@ final class HomeViewModel: ObservableObject {
     }
 
     func selectMenu(_ index: Int) {
-        switch index {
-        case 0:
-            coordinator.push(.userList)
-        case 1:
-            coordinator.push(.postList)
-        case 2:
-            coordinator.push(.mealList)
-            
-        default:
-            break
+        DispatchQueue.main.async { [weak self] in
+            switch index {
+            case 0:
+                self?.coordinator.push(.userList)
+            case 1:
+                self?.coordinator.push(.postList)
+            case 2:
+                self?.coordinator.push(.mealList)
+                
+            default:
+                break
+            }
         }
     }
     

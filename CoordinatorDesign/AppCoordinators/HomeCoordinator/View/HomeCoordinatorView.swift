@@ -48,7 +48,9 @@ struct HomeCoordinatorView: View {
         .environmentObject(tabBarState)
         .onChange(of: coordinator.path.count) { oldval, count in
             print("Count: ", oldval, count)
-            tabBarState.isHidden = count > 0
+            DispatchQueue.main.async {
+                self.tabBarState.isHidden = count > 0
+            }
         }
     }
 }

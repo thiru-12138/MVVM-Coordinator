@@ -66,7 +66,9 @@ final class ScreenAViewModel {
     }
     
     func selectImage(_ image: UIImage) {
-        coordinator.push(.imageDetail(image: image))
+        DispatchQueue.main.async { [weak self] in
+            self?.coordinator.push(.imageDetail(image: image))
+        }
     }
     
     deinit {
