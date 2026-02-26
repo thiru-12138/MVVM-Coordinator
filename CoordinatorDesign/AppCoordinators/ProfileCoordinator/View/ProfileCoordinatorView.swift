@@ -14,15 +14,19 @@ struct ProfileCoordinatorView: View {
     var body: some View {
         NavigationStack(path: $coordinator.path, root: {
             // Initial Screen
-            let imgservice = ImageService()
-            let imgcache = ImageCache()
-            ScreenAView(model: ScreenAViewModel(coordinator: coordinator,
-                                                imageService: imgservice,
-                                                cache: imgcache))
+            ProfileScreenView(model: ProfileViewModel(coordinator: coordinator))
                 .navigationDestination(for: ProfilePage.self) { page in
                     switch page {
+                    case .single:
+                        let imgservice = ImageService()
+                        let imgcache = ImageCache()
+                        ScreenAView(model: ScreenAViewModel(coordinator: coordinator,
+                                                            imageService: imgservice,
+                                                            cache: imgcache))
                     case .imageDetail(let image):
                         ScreenBView(model: ScreenBViewModel(image: image))
+                    case .multiple:
+                        MultiImageView(model: MultiImageViewModel(coordinator: coordinator))
                     }
                 }
         })

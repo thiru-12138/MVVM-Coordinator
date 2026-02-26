@@ -10,7 +10,9 @@ import SwiftUI
 import Combine
 
 enum ProfilePage: Hashable {
+    case single
     case imageDetail(image: UIImage)
+    case multiple
 }
 
 @MainActor
