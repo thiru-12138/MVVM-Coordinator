@@ -18,6 +18,5 @@ struct ScreenBView: View {
         }
         .padding()
         .navigationTitle("Image Detail")
-        
     }
 }
