@@ -17,11 +17,9 @@ struct AppCoordinatorView: View {
                 switch coordinator.selectedTab {
                 case .home:
                     HomeCoordinatorView()
-                        .environmentObject(coordinator)
                     
                 case .profile:
                     ProfileCoordinatorView()
-                        .environmentObject(coordinator)
                 }
             })
             .frame(maxWidth: .infinity, maxHeight: .infinity)

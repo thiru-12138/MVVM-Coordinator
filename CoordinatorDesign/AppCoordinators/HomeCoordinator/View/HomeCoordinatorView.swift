@@ -45,7 +45,6 @@ struct HomeCoordinatorView: View {
                     }
                 }
         })
-        .environmentObject(tabBarState)
         .onChange(of: coordinator.path.count) { oldval, count in
             print("Count: ", oldval, count)
             DispatchQueue.main.async {

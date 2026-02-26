@@ -26,7 +26,6 @@ struct ProfileCoordinatorView: View {
                     }
                 }
         })
-        .environmentObject(tabBarState)
         .onChange(of: coordinator.path.count) { oldval, count in
             DispatchQueue.main.async {
                 self.tabBarState.isHidden = count > 0
