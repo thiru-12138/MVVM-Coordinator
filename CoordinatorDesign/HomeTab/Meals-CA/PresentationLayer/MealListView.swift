@@ -114,6 +114,7 @@ struct MealCell: View {
                 Text(meal.name).font(.headline)
             })
         }
+        //.redacted(reason: [.placeholder])
         .task { [weak loader] in
             await loader?.load(from: meal.imageurl)
         }
